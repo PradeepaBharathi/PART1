@@ -5,6 +5,11 @@ const app = express()
 
 app.use(express.json())
 app.use(cors())
+
+app.get("/", (req, res) => {
+  res.send("api working");
+});
+
 app.post('/launch', (req, res) => {
     const { appName, appPath } = req.body
     
@@ -27,6 +32,10 @@ app.post('/launch', (req, res) => {
     
 })
 
+
+app.get("/", (req, res) => {
+  res.send("api working")
+})
 app.listen(5000, () => {
     console.log("app listening to port 5000")
 })
